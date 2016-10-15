@@ -40,39 +40,36 @@ public class Book {
         Author a = new Author(author);
         authors.add(a);
     }
-    
-    public String getISBN(){
+
+    public String getISBN() {
         return isbn;
     }
-    
-    public String getTitle(){
+
+    public String getTitle() {
         return title;
     }
-    
-    public int getEdition(){
+
+    public int getEdition() {
         return edition;
     }
-    
-    public double getPrice(){
+
+    public double getPrice() {
         return price;
     }
-    
-    public String getAuthors(){
-        String info = null;
-        for(Author author : authors){
-            info += author.getAuthor();
+
+    public String getAuthors() {
+        String info = "";
+        for (Author author : authors) {
+            info += author.getAuthor() + " ";
         }
         return info;
     }
-    
+
     @Override
     public String toString() {
         String info
                 = "ISBN: " + isbn + " Book Title: " + title + " Edition: "
-                + edition + " Price: " + price + " Authors: ";
-        for (Author author : authors) {
-            info += author.getAuthor();
-        }
+                + edition + " Price: " + price + " Authors: " + getAuthors();
         info += "\n";
         return info;
     }
