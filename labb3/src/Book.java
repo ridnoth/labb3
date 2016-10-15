@@ -12,9 +12,10 @@ public class Book implements java.io.Serializable {
     private final int edition;
     private final double price;
     private final ArrayList<Author> authors;
-/**
- *Creates a new book with parameters 
- */
+
+    /**
+     * Creates a new book with parameters
+     */
     public Book(String isbn, String title, int edition, double price, String author) {
         this.isbn = isbn;
         this.title = title;
@@ -23,9 +24,10 @@ public class Book implements java.io.Serializable {
         this.authors = new ArrayList<>();
         addAuthor(author);
     }
-/**
- *Creates a new standard book without taking in parameters 
- */
+
+    /**
+     * Creates a new standard book without taking in parameters
+     */
     public Book() {
         this.isbn = "0123456789";
         this.title = "City of Thieves";
@@ -34,16 +36,19 @@ public class Book implements java.io.Serializable {
         this.authors = new ArrayList<>();
         addAuthor("Johnboll Magnusson");
     }
-/**
- *Returns ISBN of the book
-     * @return 
- */
+
+    /**
+     * Returns ISBN of the book
+     *
+     * @return
+     */
     public String getISBN() {
         return isbn;
     }
-/**
- *Returns Title of the book
- */
+
+    /**
+     * Returns Title of the book
+     */
     public String getTitle() {
         return title;
     }
@@ -51,22 +56,25 @@ public class Book implements java.io.Serializable {
     public int getEdition() {
         return edition;
     }
-/**
- *Returns Price of the book
- */
+
+    /**
+     * Returns Price of the book
+     */
     public double getPrice() {
         return price;
     }
-/**
- *Adds more Authors to the book
- */
+
+    /**
+     * Adds more Authors to the book
+     */
     public void addAuthor(String author) {
         Author a = new Author(author);
         authors.add(a);
     }
-/**
- *Returns all Authors of the book
- */    
+
+    /**
+     * Returns all Authors of the book
+     */
     public String getAuthors() {
         String info = "";
         for (Author author : authors) {

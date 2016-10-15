@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Scanner;
+
 /**
  *
  * @author Hampus Glantz and Fatih Yalcin
@@ -19,7 +20,10 @@ public class Menu {
         scan = new Scanner(System.in);
     }
 
-    // Huvudloopen för menyn
+    /**
+     * Check for a file named ListofBooks if not found it will print that to
+     * user
+     */
     public void run() throws FileNotFoundException, IOException {
         char choice = ' ';
         String answer;
@@ -35,7 +39,9 @@ public class Menu {
             System.out.println("CollectionOfBooks not found");
             return;
         }
-
+        /**
+         * Main menu loop
+         */
         do {
             printMenu();
             answer = scan.nextLine();
@@ -64,7 +70,9 @@ public class Menu {
             }
 
         } while (choice != 'X');
-
+        /**
+         * Save to file
+         */
         try {
             FileOutputStream fileOut = new FileOutputStream("ListOfBooks.lstf");
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
@@ -72,7 +80,7 @@ public class Menu {
             out.close();
             fileOut.close();
             System.out.printf("Serialized data is saved in ListOfBooks.lstf");
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -121,19 +129,26 @@ public class Menu {
         } while (answer.toUpperCase().equals("Y"));
     }
 
-    // Definierar ett "uppdrag"
+    /**
+     * Creates a book
+     */
     public void createBook() {
         Book book = new Book(enterISBN(), enterTitle(), enterEdition(), enterPrice(), enterAuthor());
         cob.addBook(book);
         enterMoreAuthors(book);
     }
 
-    // Definierar ett annat "uppdrag"
+    /**
+     * Delete a Book
+     */
     public void deleteBook() {
         printBooks();
         cob.removeBook(enterTitle());
     }
 
+    /**
+     * Sub menu Search, Choise to search by Title, Author, ISBN
+     */
     public void searchMenu() {
         char choice = ' ';
         String answer;
@@ -164,10 +179,16 @@ public class Menu {
         } while (choice != 'X');
     }
 
+    /**
+     * Prints all the books that are stored in the system
+     */
     public void printBooks() {
         System.out.println(cob.toString());
     }
 
+    /**
+     * Print the sub menu Search
+     */
     public void printSearchMenu() {
         System.out.println("---Menu---");
         System.out.println("A Search by Title");
@@ -177,6 +198,9 @@ public class Menu {
         System.out.println("----------");
     }
 
+    /**
+     * Prints the Main Menu
+     */
     public void printMenu() {
         System.out.println("---Menu---");
         System.out.println("A Add new book ");
