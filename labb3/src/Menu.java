@@ -96,7 +96,7 @@ public class Menu {
 
     // Definierar ett annat "uppdrag"
     public void deleteBook() {
-        System.out.println("");
+        cob.removeBook(enterTitle());
     }
 
     public void searchMenu() {
@@ -111,13 +111,13 @@ public class Menu {
 
             switch (choice) {
                 case 'A':
-                    cob.getBookByTitle(enterTitle());
+                    System.out.println(cob.getBookByTitle(enterTitle()));
                     break;
                 case 'B':
-                    cob.getBookByISBN(enterISBN());
+                    System.out.println(cob.getBookByISBN(enterISBN()));
                     break;
                 case 'C':
-                    cob.getBookByAuthor(enterAuthor());
+                    System.out.println(cob.getBookByAuthor(enterAuthor()));
                     break;
                 case 'X':
                     System.out.println("Going back!");

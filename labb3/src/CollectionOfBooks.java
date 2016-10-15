@@ -10,7 +10,7 @@ import java.util.Comparator;
  */
 /**
  *
- * @author Glantz
+ * @author Hampus Glantz and Fatih Yalcin
  */
 public class CollectionOfBooks {
 
