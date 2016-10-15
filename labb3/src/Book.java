@@ -12,7 +12,9 @@ public class Book implements java.io.Serializable {
     private int edition;
     private double price;
     private ArrayList<Author> authors;
-
+/**
+ *Creates a new book with parameters 
+ */
     public Book(String isbn, String title, int edition, double price, String author) {
         this.isbn = isbn;
         this.title = title;
@@ -21,7 +23,9 @@ public class Book implements java.io.Serializable {
         this.authors = new ArrayList<>();
         addAuthor(author);
     }
-
+/**
+ *Creates a new standard book without taking in parameters 
+ */
     public Book() {
         this.isbn = "0123456789";
         this.title = "City of Thieves";

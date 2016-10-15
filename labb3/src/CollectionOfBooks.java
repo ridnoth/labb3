@@ -14,12 +14,16 @@ public class CollectionOfBooks implements java.io.Serializable {
         books = new ArrayList<>();
 
     }
-
+/**
+ * Adds a new book and sort the Array
+ */
     public void addBook(Book book) {
         books.add(book);
         sortBooks(books);
     }
-
+/**
+ *Removes one book that exactly matched the search parameter
+ */
     public void removeBook(String title) {
         for (Book book : books) {
             if (title.toUpperCase().equals(book.getTitle().toUpperCase())) {
@@ -37,7 +41,9 @@ public class CollectionOfBooks implements java.io.Serializable {
             }
         });
     }
-
+/**
+ *Returns an Array of books that Title search parameters matched
+ */
     public ArrayList<Book> getBookByTitle(String title) {
         ArrayList<Book> foundBooks = new ArrayList<>();
         for (Book book : books) {
@@ -48,7 +54,9 @@ public class CollectionOfBooks implements java.io.Serializable {
         sortBooks(foundBooks);
         return foundBooks;
     }
-
+/**
+ *Returns an Array of books that ISBN search parameters matched
+ */
     public ArrayList<Book> getBookByISBN(String isbn) {
         ArrayList<Book> foundBooks = new ArrayList<>();
         for (Book book : books) {
@@ -59,7 +67,9 @@ public class CollectionOfBooks implements java.io.Serializable {
         sortBooks(foundBooks);
         return foundBooks;
     }
-
+/**
+ *Returns an Array of books that Authors search parameters matched
+ */
     public ArrayList<Book> getBookByAuthor(String author) {
         ArrayList<Book> foundBooks = new ArrayList<>();
         for (Book book : books) {
