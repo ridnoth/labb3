@@ -40,7 +40,7 @@ public class CollectionOfBooks {
     public ArrayList<Book> getBookByISBN(String isbn) {
         ArrayList<Book> foundBooks = new ArrayList<>();
         for (Book book : foundBooks) {
-            if (isbn.contains(book.getTitle())) {
+            if (isbn.contains(book.getISBN())) {
                 foundBooks.add(book);
             }
         }
