@@ -9,8 +9,8 @@
  * @author Glantz
  */
 public class main {
-    main(){
-        System.out.println("Hello Hampus");
-        System.out.println("Hi Fatih");
+    public static void main(String[] args){
+        Book book = new Book();
+        System.out.println(book.toString());   
     }
 }
