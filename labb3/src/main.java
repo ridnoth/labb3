@@ -16,7 +16,6 @@ public class main {
         CollectionOfBooks cob= new CollectionOfBooks();
         cob.addBook(book1);
         cob.addBook(book1);
-        cob.getBookByTitle("C");
-        System.out.println(cob.getBookByTitle("C"));
+        System.out.println(cob.getBookByISBN("C"));
     }
 }

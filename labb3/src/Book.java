@@ -72,8 +72,8 @@ public class Book {
                 + edition + " Price: " + price + " Authors: ";
         for (Author author : authors) {
             info += author.getAuthor();
-            info += "";
         }
+        info += "\n";
         return info;
     }
 }

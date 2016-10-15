@@ -30,7 +30,7 @@ public class CollectionOfBooks {
     public ArrayList<Book> getBookByTitle(String title) {
         ArrayList<Book> foundBooks = new ArrayList<>();
         for (Book book : books) {
-            if (book.getTitle().contains(title)) {
+            if (book.getTitle().toUpperCase().contains(title.toUpperCase())) {
                 foundBooks.add(book);
             }
         }
@@ -39,8 +39,8 @@ public class CollectionOfBooks {
 
     public ArrayList<Book> getBookByISBN(String isbn) {
         ArrayList<Book> foundBooks = new ArrayList<>();
-        for (Book book : foundBooks) {
-            if (isbn.contains(book.getISBN())) {
+        for (Book book : books) {
+            if (book.getISBN().contains(isbn)) {
                 foundBooks.add(book);
             }
         }
@@ -50,6 +50,5 @@ public class CollectionOfBooks {
     public ArrayList<Book> getBookByAuthor(Author author) {
 
         return books;
-    }
-    
+    }   
 }
