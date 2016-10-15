@@ -9,5 +9,7 @@
  * @author Glantz
  */
 public class main {
-    
+    main(){
+        System.out.println("Hello Hampus");
+    }
 }
