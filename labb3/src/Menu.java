@@ -6,7 +6,10 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Scanner;
-
+/**
+ *
+ * @author Hampus Glantz and Fatih Yalcin
+ */
 public class Menu {
 
     private Scanner scan;
