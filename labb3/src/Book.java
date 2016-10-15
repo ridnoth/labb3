@@ -18,12 +18,13 @@ public class Book {
     private double price;
     private ArrayList<Author> authors;
     
-    public Book(String isbn, String title, int edition, double price, Author author){
+    public Book(String isbn, String title, int edition, double price, String author){
         this.isbn = isbn;
         this.title = title;
         this.edition = edition;
         this.price = price;
-        this.authors.add(author);
+        this.authors = new ArrayList<>();
+        addAuthor(author);
     }
     
     public Book(){
@@ -31,15 +32,20 @@ public class Book {
         this.title = "City of Thieves";
         this.edition = 17;
         this.price = 199.99;
-        Author a1 = new Author("Hampus Glants");
-        authors.add(a1);
+        this.authors = new ArrayList<>();
+        addAuthor("Johnboll Magnusson");
+    }
+    
+    public void addAuthor(String author){
+        Author a = new Author(author);
+        authors.add(a);
     }
     
     @Override
     public String toString(){
         String info 
-                = "ISBN: " + isbn + "Book Title: " + title + "Edition: "
-                + edition + "Price: " + price + "Authors: " + authors.get(0);
+                = "ISBN: " + isbn + " Book Title: " + title + " Edition: "
+                + edition + " Price: " + price + " Authors: " + authors.get(0);
         return info;
     }
 }
