@@ -36,11 +36,6 @@ public class Book {
         addAuthor("Johnboll Magnusson");
     }
 
-    public void addAuthor(String author) {
-        Author a = new Author(author);
-        authors.add(a);
-    }
-
     public String getISBN() {
         return isbn;
     }
@@ -57,6 +52,11 @@ public class Book {
         return price;
     }
 
+    public void addAuthor(String author) {
+        Author a = new Author(author);
+        authors.add(a);
+    }
+    
     public String getAuthors() {
         String info = "";
         for (Author author : authors) {
