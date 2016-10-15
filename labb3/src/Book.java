@@ -45,7 +45,11 @@ public class Book {
     public String toString(){
         String info 
                 = "ISBN: " + isbn + " Book Title: " + title + " Edition: "
-                + edition + " Price: " + price + " Authors: " + authors.get(0);
+                + edition + " Price: " + price + " Authors: ";
+        for(Author author:authors){
+                  info += author.getAuthor();
+                  info +="";
+                }
         return info;
     }
 }
