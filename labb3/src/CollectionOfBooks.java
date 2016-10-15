@@ -15,15 +15,39 @@ public class CollectionOfBooks {
     private ArrayList<Book> books;
 
     public CollectionOfBooks() {
-        ArrayList<Book> books = new ArrayList<>();
+        books = new ArrayList<>();
+
     }
 
     public void addBook(Book book) {
-            books.add(book);
+        books.add(book);
     }
 
-    
+    public void removeBook() {
+
+    }
+
     public ArrayList<Book> getBookByTitle(String title) {
+        ArrayList<Book> foundBooks = new ArrayList<>();
+        for (Book book : foundBooks) {
+            if (title.contains(book.getTitle())) {
+                foundBooks.add(book);
+            }
+        }
+        return foundBooks;
+    }
+
+    public ArrayList<Book> getBookByISBN(String isbn) {
+        ArrayList<Book> foundBooks = new ArrayList<>();
+        for (Book book : foundBooks) {
+            if (isbn.contains(book.getTitle())) {
+                foundBooks.add(book);
+            }
+        }
+        return foundBooks;
+    }
+
+    public ArrayList<Book> getBookByAuthor(Author author) {
 
         return books;
     }
