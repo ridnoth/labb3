@@ -29,8 +29,8 @@ public class CollectionOfBooks {
 
     public ArrayList<Book> getBookByTitle(String title) {
         ArrayList<Book> foundBooks = new ArrayList<>();
-        for (Book book : foundBooks) {
-            if (title.contains(book.getTitle())) {
+        for (Book book : books) {
+            if (book.getTitle().contains(title)) {
                 foundBooks.add(book);
             }
         }
@@ -52,11 +52,4 @@ public class CollectionOfBooks {
         return books;
     }
     
-    public String toString(ArrayList<Book> bookList){
-        String info=null;
-        for(Book book : bookList){
-            info += " Title:" + book.getTitle()+ " Author:"+ book.getAuthors()+ " ISBN:" +book.getISBN()+" Price:" +book.getPrice();
-        }
-        return info;
-    }
 }

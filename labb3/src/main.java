@@ -12,7 +12,11 @@ public class main {
 
     public static void main(String[] args) {
         Book book1 = new Book();
-        System.out.println(book1.toString());
-
+        //System.out.println(book1.toString());
+        CollectionOfBooks cob= new CollectionOfBooks();
+        cob.addBook(book1);
+        cob.addBook(book1);
+        cob.getBookByTitle("C");
+        System.out.println(cob.getBookByTitle("C"));
     }
 }
