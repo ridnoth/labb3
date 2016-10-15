@@ -9,5 +9,5 @@
  * @author Glantz
  */
 public class ColletionOfBooks {
-    
+
 }

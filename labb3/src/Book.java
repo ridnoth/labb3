@@ -9,5 +9,11 @@
  * @author Glantz
  */
 public class Book {
+    private int ISBN;
+    private String title;
+    private int editon;
+    private double price;
+ 
+    
     
 }
