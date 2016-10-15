@@ -77,9 +77,10 @@ public class Menu {
     }
 
     private void enterMoreAuthors(Book book) {
-        System.out.println("Enter another author? (Y/N): ");
-        String answer = scan.nextLine();
+        String answer = "";
         do {
+            System.out.println("Enter another author? (Y/N): ");
+            answer = scan.nextLine();
             if (answer.toUpperCase().equals("Y")) {
                 book.addAuthor(enterAuthor());
             }
@@ -129,7 +130,7 @@ public class Menu {
     }
 
     public void printBooks() {
-        System.out.println("Doing that...");
+        System.out.println(cob.toString());
     }
 
     public void printSearchMenu() {
