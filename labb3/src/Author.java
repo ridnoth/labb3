@@ -8,7 +8,7 @@
  *
  * @author Glantz
  */
-public class Author {
+public class Author implements java.io.Serializable {
 
     private String name;
 

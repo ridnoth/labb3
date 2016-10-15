@@ -12,7 +12,7 @@ import java.util.Comparator;
  *
  * @author Hampus Glantz and Fatih Yalcin
  */
-public class CollectionOfBooks {
+public class CollectionOfBooks implements java.io.Serializable {
 
     private ArrayList<Book> books;
 

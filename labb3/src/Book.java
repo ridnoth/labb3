@@ -10,7 +10,7 @@ import java.util.ArrayList;
  *
  * @author Glantz
  */
-public class Book {
+public class Book implements java.io.Serializable {
 
     private String isbn;
     private String title;

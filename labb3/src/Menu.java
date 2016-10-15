@@ -1,4 +1,10 @@
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
 public class Menu {
@@ -11,9 +17,21 @@ public class Menu {
     }
 
     // Huvudloopen för menyn
-    public void run() {
+    public void run() throws FileNotFoundException, IOException {
         char choice = ' ';
         String answer;
+        try {
+            FileInputStream fileIn = new FileInputStream("ListOfBooks.lstf");
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            cob = (CollectionOfBooks) in.readObject();
+            in.close();
+            fileIn.close();
+        } catch (IOException i) {
+            System.out.println("File not found");
+        } catch (ClassNotFoundException c) {
+            System.out.println("CollectionOfBooks not found");
+            return;
+        }
 
         do {
             printMenu();
@@ -36,12 +54,25 @@ public class Menu {
                     break;
                 case 'X':
                     System.out.println("Bye, bye!");
+
                     break;
                 default:
                     System.out.println("Unknown command");
             }
 
         } while (choice != 'X');
+
+        try {
+            FileOutputStream fileOut = new FileOutputStream("ListOfBooks.lstf");
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(cob);
+            out.close();
+            fileOut.close();
+            System.out.printf("Serialized data is saved in ListOfBooks.lstf");
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     private String enterISBN() {
@@ -96,6 +127,7 @@ public class Menu {
 
     // Definierar ett annat "uppdrag"
     public void deleteBook() {
+        printBooks();
         cob.removeBook(enterTitle());
     }
 
