@@ -51,4 +51,12 @@ public class CollectionOfBooks {
 
         return books;
     }
+    
+    public String toString(ArrayList<Book> bookList){
+        String info=null;
+        for(Book book : bookList){
+            info += " Title:" + book.getTitle()+ " Author:"+ book.getAuthors()+ " ISBN:" +book.getISBN()+" Price:" +book.getPrice();
+        }
+        return info;
+    }
 }
