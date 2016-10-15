@@ -7,11 +7,11 @@ import java.util.ArrayList;
  */
 public class Book implements java.io.Serializable {
 
-    private String isbn;
-    private String title;
-    private int edition;
-    private double price;
-    private ArrayList<Author> authors;
+    private final String isbn;
+    private final String title;
+    private final int edition;
+    private final double price;
+    private final ArrayList<Author> authors;
 /**
  *Creates a new book with parameters 
  */
@@ -34,11 +34,16 @@ public class Book implements java.io.Serializable {
         this.authors = new ArrayList<>();
         addAuthor("Johnboll Magnusson");
     }
-
+/**
+ *Returns ISBN of the book
+     * @return 
+ */
     public String getISBN() {
         return isbn;
     }
-
+/**
+ *Returns Title of the book
+ */
     public String getTitle() {
         return title;
     }
@@ -46,16 +51,22 @@ public class Book implements java.io.Serializable {
     public int getEdition() {
         return edition;
     }
-
+/**
+ *Returns Price of the book
+ */
     public double getPrice() {
         return price;
     }
-
+/**
+ *Adds more Authors to the book
+ */
     public void addAuthor(String author) {
         Author a = new Author(author);
         authors.add(a);
     }
-    
+/**
+ *Returns all Authors of the book
+ */    
     public String getAuthors() {
         String info = "";
         for (Author author : authors) {
